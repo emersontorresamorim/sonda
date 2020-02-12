@@ -10,6 +10,14 @@ public class EntradaDTO implements Serializable {
 	private String limitePlanalto;
 	private List<SondaDTO> sondas;
 
+	public EntradaDTO() {
+	}
+
+	public EntradaDTO(String limitePlanalto, List<SondaDTO> sondas) {
+		this.limitePlanalto = limitePlanalto;
+		this.sondas = sondas;
+	}
+
 	public String getLimitePlanalto() {
 		return limitePlanalto;
 	}

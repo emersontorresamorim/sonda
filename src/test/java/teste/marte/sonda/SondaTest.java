@@ -12,14 +12,14 @@ import teste.marte.sonda.enumeration.Lado;
 public class SondaTest {
 
 	@Test
-	public void movimentacaoSondaTest() {
+	public void deveMovimentarSondaSucessoCenario1() {
 		/*
 		 * Cenário 1:
 		 * 
 		 * Entrada: 
 		 * 5 5 
 		 * 1 2 N 
-		 * LMLMLMLMM
+		 * EMEMEMEMM
 		 * 
 		 * Saída: 
 		 * 1 3 N
@@ -41,5 +41,38 @@ public class SondaTest {
 		assertEquals(sonda.getPosicao().getEixoX(), 1);
 		assertEquals(sonda.getPosicao().getEixoY(), 3);
 		assertEquals(sonda.getDirecao(), Direcao.NORTE);
+	}
+	
+	@Test
+	public void deveMovimentarSondaSucessoCenario2() {
+		/*
+		 * Cenário 2:
+		 * 
+		 * Entrada: 
+		 * 5 5 
+		 * 3 3 L 
+		 * MMDMMDMDDM
+		 * 
+		 * Saída: 
+		 * 
+		 */
+		
+		Planalto planalto = new Planalto(5, 5);
+		Sonda sonda = new Sonda(3, 3, Direcao.LESTE, planalto);
+		
+		sonda.mover();
+		sonda.mover();
+		sonda.virar(Lado.DIREITO);
+		sonda.mover();
+		sonda.mover();
+		sonda.virar(Lado.DIREITO);
+		sonda.mover();
+		sonda.virar(Lado.DIREITO);
+		sonda.virar(Lado.DIREITO);
+		sonda.mover();
+		
+		assertEquals(sonda.getPosicao().getEixoX(), 5);
+		assertEquals(sonda.getPosicao().getEixoY(), 1);
+		assertEquals(sonda.getDirecao(), Direcao.LESTE);
 	}
 }
