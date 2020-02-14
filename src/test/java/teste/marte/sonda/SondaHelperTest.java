@@ -27,7 +27,7 @@ public class SondaHelperTest {
 	private SondaHelper helper;
 
 	@Test
-	public void deveGerarPlanalto() {
+	public void deveGerarPlanaltoComSucesso() {
 		EntradaDTO entrada = new EntradaDTO("4 4", new ArrayList<>());
 
 		Planalto planalto = helper.getPlanalto(entrada);
@@ -37,7 +37,7 @@ public class SondaHelperTest {
 	}
 
 	@Test
-	public void deveGerarSonda() {
+	public void deveGerarSondaComSucesso() {
 		Sonda sonda = helper.getSonda(new SondaDTO("2 1 L"), new Planalto(3, 3));
 
 		assertEquals(3, sonda.getPlanalto().getEixoX());
@@ -48,7 +48,7 @@ public class SondaHelperTest {
 	}
 
 	@Test
-	public void deveGerarComandos() {
+	public void deveGerarComandosComSucesso() {
 		List<IComando> comandos = helper.getComandos(new SondaDTO("1 1 N", "MDMEMEMMEM"));
 
 		assertEquals(10, comandos.size());

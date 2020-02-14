@@ -78,4 +78,32 @@ public class Sonda implements Serializable {
 	public String toString() {
 		return String.format("%d %d %s", posicao.getEixoX(), posicao.getEixoY(), direcao.getSigla());
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((direcao == null) ? 0 : direcao.hashCode());
+		result = prime * result + ((posicao == null) ? 0 : posicao.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Sonda other = (Sonda) obj;
+		if (direcao != other.direcao)
+			return false;
+		if (posicao == null) {
+			if (other.posicao != null)
+				return false;
+		} else if (!posicao.equals(other.posicao))
+			return false;
+		return true;
+	}
 }

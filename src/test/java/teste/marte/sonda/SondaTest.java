@@ -12,7 +12,7 @@ import teste.marte.sonda.enumeration.Lado;
 public class SondaTest {
 
 	@Test
-	public void deveMovimentarSondaSucessoCenario1() {
+	public void deveMovimentarSondaComSucessoCenario1() {
 		/*
 		 * Cenário 1:
 		 * 
@@ -44,7 +44,7 @@ public class SondaTest {
 	}
 	
 	@Test
-	public void deveMovimentarSondaSucessoCenario2() {
+	public void deveMovimentarSondaComSucessoCenario2() {
 		/*
 		 * Cenário 2:
 		 * 
