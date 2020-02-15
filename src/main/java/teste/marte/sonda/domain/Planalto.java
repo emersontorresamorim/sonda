@@ -19,4 +19,9 @@ public class Planalto implements Serializable {
 	public int getEixoY() {
 		return posicao.getEixoY();
 	}
+	
+	@Override
+	public String toString() {
+		return String.format("%d %d", posicao.getEixoX(), posicao.getEixoY());
+	}
 }

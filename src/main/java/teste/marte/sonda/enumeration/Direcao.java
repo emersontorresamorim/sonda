@@ -76,6 +76,8 @@ public enum Direcao {
 			direcao = Direcao.LESTE;
 		} else if ("O".equals(sigla)) {
 			direcao = Direcao.OESTE;
+		} else {
+			throw new IllegalArgumentException("Direção inválida.");
 		}
 
 		return Optional.ofNullable(direcao);

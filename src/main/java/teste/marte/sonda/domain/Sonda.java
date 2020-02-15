@@ -1,7 +1,6 @@
 package teste.marte.sonda.domain;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 import teste.marte.sonda.comando.IComando;
 import teste.marte.sonda.enumeration.Direcao;
@@ -18,9 +17,6 @@ public class Sonda implements Serializable {
 	private Planalto planalto;
 
 	public Sonda(Integer posicaoX, Integer posicaoY, Direcao direcao, Planalto planalto) {
-		if (Objects.isNull(posicaoX) || Objects.isNull(posicaoY) || Objects.isNull(direcao)) {
-			throw new IllegalArgumentException("Os valores de posição X, Y e Direção não podem ser nulos.");
-		}
 		this.posicao = new Posicao(posicaoX, posicaoY);
 		this.direcao = direcao;
 		this.planalto = planalto;
@@ -50,8 +46,8 @@ public class Sonda implements Serializable {
 		if (isMovimentoValido(planalto)) {
 			posicao = direcao.mover(posicao);
 		} else {
-			throw new MovimentoSondaInvalidoExpcetion(
-					String.format("Movimento de Sonda inválido. (Localização: %s)", toString()));
+			throw new MovimentoSondaInvalidoExpcetion(String.format(
+					"Movimento de Sonda inválido. (Localização: %s - Planalto: %s)", toString(), planalto.toString()));
 		}
 	}
 

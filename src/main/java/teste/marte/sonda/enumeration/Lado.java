@@ -24,6 +24,8 @@ public enum Lado {
 			lado = Lado.ESQUERDO;
 		} else if ("D".equals(sigla)) {
 			lado = Lado.DIREITO;
+		} else {
+			throw new IllegalArgumentException("Lado inválido.");
 		}
 
 		return Optional.ofNullable(lado);
