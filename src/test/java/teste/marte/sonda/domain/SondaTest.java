@@ -1,4 +1,4 @@
-package teste.marte.sonda;
+package teste.marte.sonda.domain;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

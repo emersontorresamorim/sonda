@@ -47,7 +47,7 @@ public class Sonda implements Serializable {
 			posicao = direcao.mover(posicao);
 		} else {
 			throw new MovimentoSondaInvalidoExpcetion(String.format(
-					"Movimento de Sonda inválido. (Localização: %s - Planalto: %s)", toString(), planalto.toString()));
+					"Movimento de Sonda inválido. (Localização: %s - Planalto: %s).", toString(), planalto.toString()));
 		}
 	}
 
